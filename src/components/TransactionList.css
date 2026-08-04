@@ -1,0 +1,63 @@
+.transaction-panel {
+  height: 100%;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.transaction-table th {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 14px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.transaction-table td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 15px;
+}
+
+.transaction-table tr:last-child td {
+  border-bottom: none;
+}
+
+.transaction-table tr {
+  transition: var(--transition-smooth);
+}
+
+.transaction-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.align-right {
+  text-align: right;
+}
+
+.text-muted {
+  color: var(--text-secondary);
+}
+
+.text-strong {
+  font-weight: 500;
+}
+
+.fw-bold {
+  font-weight: 600;
+}
+
+.category-badge {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
