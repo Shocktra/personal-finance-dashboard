@@ -1,5 +1,6 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import { parseAmount } from '../utils/amount';
 import './ExpenseChart.css';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -8,7 +9,7 @@ export default function ExpenseChart({ transactions }) {
   const expensesByCategory = {};
 
   transactions.forEach(t => {
-    const amount = parseFloat(t.Tutar);
+    const amount = parseAmount(t.Tutar);
     if (!isNaN(amount) && amount < 0) {
       const cat = t.Kategori || 'Diğer';
       expensesByCategory[cat] = (expensesByCategory[cat] || 0) + Math.abs(amount);
