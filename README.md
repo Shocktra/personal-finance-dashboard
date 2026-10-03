@@ -1,16 +1,29 @@
-# React + Vite
+# Finansal Kontrol Paneli
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Banka hesap özeti CSV dosyanızı yükleyin; toplam gelir, gider, net bakiye, kategori bazlı harcama dağılımı ve son işlemleri tarayıcıda görün. Veriler hiçbir yere gönderilmez, tüm işlem tarayıcıda yapılır.
 
-Currently, two official plugins are available:
+## CSV formatı
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Başlık satırı zorunludur:
 
-## React Compiler
+```csv
+Tarih,Açıklama,Kategori,Tutar
+01.10.2023,Maaş Ödemesi,Maaş,25000
+02.10.2023,Market Alışverişi,Market,-1200
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Gelir pozitif, gider negatif tutardır.
+- Tutarlar `-1200.50` ve Türk formatı `-1.200,50` biçimlerinde yazılabilir.
+- Uygulamadaki "Örnek CSV İndir" düğmesi hazır bir örnek verir.
 
-## Expanding the Oxlint configuration
+## Geliştirme
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+npm install
+npm run dev     # geliştirme sunucusu
+npm test        # birim testleri (vitest)
+npm run lint    # oxlint
+npm run build   # üretim derlemesi
+```
+
+Teknolojiler: React, Vite, Chart.js, PapaParse.

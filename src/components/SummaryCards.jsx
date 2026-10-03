@@ -1,4 +1,5 @@
 import { ArrowUpRight, ArrowDownRight, Wallet } from 'lucide-react';
+import { parseAmount } from '../utils/amount';
 import './SummaryCards.css';
 
 export default function SummaryCards({ transactions }) {
@@ -6,7 +7,7 @@ export default function SummaryCards({ transactions }) {
   let expense = 0;
 
   transactions.forEach(t => {
-    const amount = parseFloat(t.Tutar);
+    const amount = parseAmount(t.Tutar);
     if (!isNaN(amount)) {
       if (amount > 0) income += amount;
       else expense += Math.abs(amount);

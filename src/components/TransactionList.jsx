@@ -1,3 +1,4 @@
+import { parseAmount } from '../utils/amount';
 import './TransactionList.css';
 
 export default function TransactionList({ transactions }) {
@@ -22,7 +23,7 @@ export default function TransactionList({ transactions }) {
           </thead>
           <tbody>
             {transactions.slice(0, 15).map((t, index) => {
-              const amount = parseFloat(t.Tutar);
+              const amount = parseAmount(t.Tutar);
               if (isNaN(amount)) return null;
               
               const isIncome = amount > 0;
